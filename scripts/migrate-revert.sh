@@ -4,4 +4,4 @@ export DATABASE_URL='postgres://development:development@localhost:5432/developme
 
 cd .. || exit 1
 
-sqlx migrate add create_tables
+sqlx migrate revert

@@ -14,6 +14,7 @@ create table address
 create table survey
 (
     id         serial primary key,
+    name       varchar(256),
     address_id integer not null references address (id)
 );
 
