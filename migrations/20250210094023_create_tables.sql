@@ -8,14 +8,16 @@ create table address
     id     serial primary key,
     street varchar(256),
     number integer,
-    city   varchar(128) not null
+    city   varchar(128) not null,
+    unique (street, number, city)
 );
 
 create table survey
 (
     id         serial primary key,
     name       varchar(256),
-    address_id integer not null references address (id)
+    address_id integer not null references address (id),
+    unique (name)
 );
 
 create table survey_data
