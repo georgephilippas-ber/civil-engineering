@@ -10,7 +10,7 @@ async fn main() {
 
     let su: Surveying = Surveying::new(&database_pool);
 
-    su.create_survey("survey", "here", 1, "Berlin")
+    su.create_survey("survey3", "here", 123, "Berlin")
         .await
         .unwrap();
 
