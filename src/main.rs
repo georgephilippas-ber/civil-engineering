@@ -1,12 +1,11 @@
-use sqlx::{Error, Pool, Postgres};
+use crate::database::create_postgres_pool;
 
-async fn create_postgres_pool() -> Result<Pool<Postgres>, Error> {
-    Pool::connect("postgres://postgres:postgres@localhost:5432/postgres").await
-}
+mod database;
+mod facets;
 
 #[tokio::main]
 async fn main() {
-    let c = create_postgres_pool().await.unwrap();
+    let database_pool = create_postgres_pool().await.unwrap();
 
-    c.close()
+    database_pool.close().await
 }
