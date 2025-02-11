@@ -12,7 +12,6 @@ fn solve(input: Vec<i32>) -> Vec<i32> {
         .map(|(i, x)| (x, i as i32));
 
     g.keys()
-
 }
 
 #[tokio::main]
